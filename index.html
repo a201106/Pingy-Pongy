@@ -1,4 +1,3 @@
-<!--created by prashant shukla-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,11 +15,27 @@
     </head>
     <body background="background1.jpg">
         <script src="main.js"></script>
-        <h3>AI Pingy-Pongy</h3>
+        <h3 class="ok">AI Pingy-Pongy</h3>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Instructions</button>
         <button class="btn btn-primary" onclick="startGame()" id="start">Start to Play</button>
         <br><br>
         <h3 id="status" class="btn btn-warning"></h3>
         <br><br>
         <div id="canvas"></div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button class="close" data-dismiss="modal">&times;</button> 
+                  <h4>INSTRUCTIONS</h4>             
+                </div>
+  
+                <div class="modal-body">
+                  <h4>⬆Move your hand towards up to move the paddle up⬆</h4>
+                  <h4>⬇Move your hand towards down to move the paddle down⬇</h4>
+                </div>
+              </div>
+            </div>
+        </div>
     </body>
 </html>
