@@ -1,4 +1,7 @@
-
+rightWristX = "0";
+rightWristY = "0";
+scoreRightWrist = 0;
+game_status = "";
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -35,7 +38,24 @@ var ball = {
       console.log("Model Loaded!");
     }
 
+    function gotPoses(results)
+{
+  if(results.length > 0)
+  {
+    rightWristY = results[0].pose.rightWrist.y;
+    rightWristX = results[0].pose.rightWrist.x;
+    scoreRightWrist =  results[0].pose.keypoints[10].score;
+    console.log(scoreRightWrist);
+  }
+}
+
+function startGame() {
+  GameStatus = "start";
+  document.getElementById("status").innerHTML = "Game is Loading"; 
+}
+
 function draw(){
+
 
  background(0); 
 
@@ -47,6 +67,11 @@ function draw(){
  stroke("black");
  rect(0,0,20,700);
  
+ if (scoreRightWrist > 0.2) {
+  fill("red");
+  stroke("red");
+  circle(rightWristX, rightWristY, 30);
+ }
    //funtion paddleInCanvas call 
    paddleInCanvas();
  
@@ -74,6 +99,7 @@ function draw(){
    
    //function move call which in very important
     move();
+ 
 }
 
 
