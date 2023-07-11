@@ -23,6 +23,7 @@ var ball = {
 }
 
   function setup(){
+    game_status = "";
     var canvas =  createCanvas(700,600);
     canvas.parent('canvas');
     
@@ -55,13 +56,12 @@ function startGame() {
 }
 
 function draw(){
-
+ if (game_status == "start")
 
  background(0); 
-
  fill("black");
  stroke("black");
- rect(680,0,20,700);
+ rect(680,0,20,700)
 
  fill("black");
  stroke("black");
